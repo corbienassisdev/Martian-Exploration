@@ -289,6 +289,14 @@
       <Project>{D4B19412-C0E8-6D2F-EADD-5DCDEEF8BD7E}</Project>
       <Name>MartianSimulationV0</Name>
     </ProjectReference>
+    <ProjectReference Include="MartianSimulationV0.Plugins.csproj">
+      <Project>{04E15779-C655-5A94-3745-D3292D0ABFE8}</Project>
+      <Name>MartianSimulationV0.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="MartianSimulationV0.Editor.Plugins.csproj">
+      <Project>{55FF9747-513A-1C6C-6A21-D44797BEBF9A}</Project>
+      <Name>MartianSimulationV0.Editor.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Effects\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
@@ -325,7 +333,6 @@
     <Compile Include="Assets\Effects\PostProcessing\Editor\Utils\EditorResources.cs" />
     <Compile Include="Assets\Effects\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\Effects\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
-    <Compile Include="Assets\StandardAssets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Effects\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
@@ -362,48 +369,52 @@
     <None Include="Assets\Effects\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
     <None Include="Assets\Effects\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\Settlement\SettlementModularPack\Readme.txt" />
-    <None Include="Assets\StandardAssets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\StandardAssets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\World\MarsEnv\Shaders\TerrBumpAddPass.shader" />
-    <None Include="Assets\World\MarsEnv\Shaders\TerrBumpFirstPass.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\SeparableBlur.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
-    <None Include="Assets\World\MarsEnv\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\World\MarsEnvironment\Shaders\TerrBumpAddPass.shader" />
+    <None Include="Assets\World\MarsEnvironment\Shaders\TerrBumpFirstPass.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\SeparableBlur.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
+    <None Include="Assets\World\MarsEnvironment\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\World\Rocks\Shaders\Blend SM2.shader" />
+    <None Include="Assets\World\Rocks\Shaders\Blend SM3.shader" />
+    <None Include="Assets\World\Rocks\Shaders\shader info.txt" />
+    <None Include="Assets\World\Rocks\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
