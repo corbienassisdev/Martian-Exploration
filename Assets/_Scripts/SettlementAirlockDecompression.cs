@@ -17,24 +17,33 @@ public class SettlementAirlockDecompression : MonoBehaviour {
     public GameObject environment;
 
     private AudioSource audioSource;
-    
-	void Start ()
+    private AirlockState state;
+
+    void Start ()
     {
         audioSource = GetComponent<AudioSource>();
+        state = AirlockState.Ambient;
 	}
-	
-	void Update ()
+
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && state == AirlockState.Ambient)
         {
             doorIn.GetComponent<SettlementAirlockDoor>().CloseDoor();
-            doorIn.GetComponent<SettlementAirlockDoor>().LockDoor(); 
-            DecompressAirlock();
+            doorIn.GetComponent<SettlementAirlockDoor>().LockDoor();
+            StartCoroutine( DecompressAirlock() );
         }
     }
-    
-    public void DecompressAirlock ()
+
+    private IEnumerator DecompressAirlock ()
     {
+        float start;
+        if (doorIn.GetComponent<SettlementAirlockDoor>().state == DoorState.Close)
+            start = 0;
+        else
+            start = 2.5f;
+        yield return new WaitForSeconds(start);
+        state = AirlockState.Decompressing;
         StartCoroutine(PlaySound(soundStartTime));
         StartCoroutine(LightDecompressing(greenLightStartTime));
         StartCoroutine(ActivateSmoke(smokeStartTime));
@@ -75,7 +84,10 @@ public class SettlementAirlockDecompression : MonoBehaviour {
     private IEnumerator OpenDoorOut(float start)
     {
         yield return new WaitForSeconds(start);
+        state = AirlockState.Decompressed;
         doorOut.GetComponent<SettlementAirlockDoor>().OpenDoor();
         environment.GetComponent<EnvironmentSound>().PlayAmbientSound();
     }
 }
+
+public enum AirlockState { Ambient, Decompressing, Decompressed };

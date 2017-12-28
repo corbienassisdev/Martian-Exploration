@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SettlementAirlockDoor : MonoBehaviour {
 
+    public DoorState state;
+
     private Animator animator;
     private AudioSource audioSource;
     private bool isLocked;
@@ -13,11 +15,12 @@ public class SettlementAirlockDoor : MonoBehaviour {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         animator.speed = 0.28f;
+        state = DoorState.Close;
     }
 
     void OnTriggerStay (Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.A) && other.CompareTag("Player") && !animator.GetBool("Open"))
+        if (Input.GetKeyDown(KeyCode.A) && other.CompareTag("Player"))
         { 
             OpenDoor();
         }
@@ -25,8 +28,9 @@ public class SettlementAirlockDoor : MonoBehaviour {
 
     public void OpenDoor()
     {
-        if (!isLocked)
+        if (!isLocked && state == DoorState.Close)
         {
+            state = DoorState.Open;
             animator.SetBool("Open", true);
             audioSource.Play();
         }
@@ -34,7 +38,7 @@ public class SettlementAirlockDoor : MonoBehaviour {
 
     public void CloseDoor()
     {
-        if (!isLocked)
+        if (!isLocked && state == DoorState.Open)
         {
             animator.SetBool("Open", false);
             audioSource.Play();
@@ -46,3 +50,5 @@ public class SettlementAirlockDoor : MonoBehaviour {
         isLocked = true;
     }
 }
+
+public enum DoorState { Open, Close };
